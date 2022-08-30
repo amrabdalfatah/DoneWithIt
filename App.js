@@ -1,15 +1,16 @@
-import React from "react";
-import { View } from "react-native";
+import React, { useState } from "react";
 
-import ListItem from "./app/components/ListItem";
-import Card from "./app/components/Card";
-import ViewImageScreen from "./app/screens/ViewImageScreen";
-import WelcomeScreen from "./app/screens/WelcomeScreen";
-import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
-import MessagesScreen from "./app/screens/MessagesScreen";
-import ListingsScreen from "./app/screens/ListingsScreen";
-import AccountScreen from "./app/screens/AccountScreen";
+import Screen from "./app/components/Screen";
+import AppTextInput from "./app/components/AppTextInput";
 
 export default function App() {
-  return <AccountScreen />;
+  return (
+    <Screen style={{ justifyContent: "center", alignItem: "center" }}>
+      <AppTextInput
+        icon="email"
+        placeholder="Enter First Name"
+        onChangeText={(text) => console.log(text)}
+      />
+    </Screen>
+  );
 }
