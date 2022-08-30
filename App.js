@@ -1,16 +1,32 @@
 import React, { useState } from "react";
-
-import Screen from "./app/components/Screen";
+import { Switch } from "react-native";
+import AppPicker from "./app/components/AppPicker";
 import AppTextInput from "./app/components/AppTextInput";
+import Screen from "./app/components/Screen";
+
+const items = [
+  {
+    label: "Red",
+    value: 1,
+  },
+  {
+    label: "Blue",
+    value: 2,
+  },
+];
 
 export default function App() {
+  const [selected, setSelected] = useState(items);
   return (
-    <Screen style={{ justifyContent: "center", alignItem: "center" }}>
-      <AppTextInput
-        icon="email"
-        placeholder="Enter First Name"
-        onChangeText={(text) => console.log(text)}
+    <Screen>
+      <AppPicker
+        icon="menu"
+        placeholder="Category"
+        items={items}
+        selectedItem={selected}
+        onSelectedItem={setSelected}
       />
+      <AppTextInput icon="email" placeholder="Email" />
     </Screen>
   );
 }

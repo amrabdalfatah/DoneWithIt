@@ -7,12 +7,14 @@ import colors from "../config/colors";
 function AppTextInput({ icon, ...otherProps }) {
   return (
     <View style={styles.container}>
-      <MaterialCommunityIcons
-        name={icon}
-        size={20}
-        color={colors.medium}
-        style={styles.icon}
-      />
+      {icon && (
+        <MaterialCommunityIcons
+          name={icon}
+          size={20}
+          color={colors.medium}
+          style={styles.icon}
+        />
+      )}
       <TextInput style={styles.text} {...otherProps} />
     </View>
   );
