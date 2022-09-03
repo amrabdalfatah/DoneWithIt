@@ -9,7 +9,7 @@ const initialMessages = [
   {
     id: 1,
     title: "T1",
-    description: "D1",
+    description: "Hey there, I want to sell new product on your website",
     image: require("../assets/amr.jpg"),
   },
   {
